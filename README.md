@@ -43,7 +43,7 @@ Security: Password hashing, input validation
 bash
 Copy
 Edit
-git clone https://github.com/Vinayak7788722/whisper-app-mongo-atlas
+git
 cd whisper-app
 2. Install dependencies
 bash
