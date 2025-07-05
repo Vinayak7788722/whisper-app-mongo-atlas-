@@ -4,7 +4,7 @@ A secure secret-sharing web app built with Node.js, Express, MongoDB, and JWT Au
 Users can register, log in, and access a protected secrets page using encrypted passwords and token-based authentication.
 
 🚀 Live Demo
-🔗 https://whisper-app.onrender.com (replace with your actual Render URL)
+🔗 https://whisper-app-5xe6.onrender.com
 
 🛠️ Tech Stack
 Frontend: EJS + Bootstrap
@@ -43,7 +43,7 @@ Security: Password hashing, input validation
 bash
 Copy
 Edit
-git clone https://github.com/your-username/whisper-app.git
+git clone https://github.com/Vinayak7788722/whisper-app-mongo-atlas
 cd whisper-app
 2. Install dependencies
 bash
@@ -87,7 +87,6 @@ Click Deploy
 ✅ Done! Your app is now live 🎉
 
 📁 Folder Structure
-pgsql
 Copy
 Edit
 📦 whisper-app
@@ -102,6 +101,9 @@ Edit
 ├── package.json
 └── README.md
 ✨ Author
+
 Vinayak G RAGHU
+
 Made with ❤️ for learning & growth
+
 GitHub Profile- https://github.com/Vinayak7788722
