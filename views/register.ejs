@@ -1,0 +1,81 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card shadow">
+        <div class="card-body">
+
+          <!-- Registration Form -->
+          <form action="/register" method="POST" onsubmit="return validateForm()">
+            
+            <!-- Name -->
+            <div class="form-group mb-3">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Create a password" required>
+              <div class="form-check mt-2">
+                <input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePassword()">
+                <label class="form-check-label" for="showPassword">Show Password</label>
+              </div>
+              <small class="form-text text-muted">
+                Password must be 6–12 characters with at least one uppercase, one lowercase, and one number.
+              </small>
+            </div>
+
+            <!-- Error Display -->
+            <% if (typeof error !== "undefined" && error) { %>
+              <p class="text-danger"><%= error %></p>
+            <% } %>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-dark">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePassword() {
+    const passField = document.getElementById("password");
+    passField.type = passField.type === "password" ? "text" : "password";
+  }
+
+  function validateForm() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const emailPattern = /^[^@]+@[^@]+\.[a-z]{2,}$/i;
+    const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,12}$/;
+
+    if (!emailPattern.test(email)) {
+      alert("Invalid email format.");
+      return false;
+    }
+
+    if (!passPattern.test(password)) {
+      alert("Password must be 6-12 characters long, contain an uppercase letter, lowercase letter, and a number.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+<%- include('partials/footer') %>
